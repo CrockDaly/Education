@@ -18,7 +18,7 @@ public class Main {
         isMapContainsKey(map.containsValue("Egor"));
     }
     private static void isMapContainsKey(boolean result ) {
-        if (result == true) {
+        if (result) {
             System.out.println("Yes, this key is exist in the map");
         } else {
             System.out.println("No, this key is not exist in the map");
