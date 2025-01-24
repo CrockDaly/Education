@@ -16,7 +16,7 @@ public static <T extends Number> void calculateSumOfEvenAndOdd(List <T> numbers)
     double sumEven = 0;
     double sumOdd = 0;
 
-    for (var number : numbers) {
+    for (T number : numbers) {
         if (number.doubleValue() % 2 == 0) {
             sumEven += number.doubleValue();
         } else {
