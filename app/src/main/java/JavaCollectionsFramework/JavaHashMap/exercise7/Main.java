@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        HashMap<String, Integer> map = new HashMap<>();
+      Map<String, Integer> map = new HashMap<>();
 
         map.put("Vasya", 14);
         map.put("Oleg", 16);
@@ -13,15 +13,15 @@ public class Main {
 
         System.out.println("The original map is: " + map);
         System.out.println("\nIs key Igor exist?");
-        isMapContainsKey(map.containsKey("Igor"));
+        processMapContainsKey("Igor", map);
         System.out.println("\nIs key Egor exist?");
-        isMapContainsKey(map.containsValue("Egor"));
+        processMapContainsKey("Egor", map);
     }
-    private static void isMapContainsKey(boolean result ) {
-        if (result) {
-            System.out.println("Yes, this key is exist in the map");
+    private static void processMapContainsKey(String key, Map<String, Integer> map) {
+        if (map.containsKey(key)){
+            System.out.println("Yes, key " + key +" is exist in the map");
         } else {
-            System.out.println("No, this key is not exist in the map");
+            System.out.println("No, this key " + key + " is not exist in the map");
         }
     }
 }
