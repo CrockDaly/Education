@@ -17,7 +17,7 @@ public class Main {
         }
     }
 
-    public static void evenOrOdd(int number) throws IllegalAccessException {
+    public static void validateNumberIsEven(int number) throws IllegalAccessException {
         if (number % 2 != 0) {
             throw new IllegalAccessException(number + " is odd");
         }
