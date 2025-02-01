@@ -2,9 +2,8 @@ package javaStreamAPI.javaLambda;
 
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 //Write a Java program to implement a lambda expression to sort a list of strings in alphabetical order.
 public class Exercise5 {

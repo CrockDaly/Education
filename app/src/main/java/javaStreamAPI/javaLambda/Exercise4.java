@@ -18,12 +18,12 @@ public class Exercise4 {
 
         List<Integer> oddNumbers = arr.stream()
                 .filter(element -> element % 2 == 0 )
-                .collect(Collectors.toList());
+                .toList();
         System.out.println("Odd numbers of the list is: " +oddNumbers);
 
         List<Integer> evenNumbers = arr.stream()
                 .filter(element -> element % 2 != 0)
-                .collect(Collectors.toList());
+                .toList();
         System.out.println("Even numbers of the list is: " +evenNumbers);
 
     }
