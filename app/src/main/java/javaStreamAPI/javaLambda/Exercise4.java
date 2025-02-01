@@ -2,7 +2,7 @@ package javaStreamAPI.javaLambda;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 //Write a Java program to implement a lambda expression to filter out even and odd numbers from a list of integers.
 public class Exercise4 {
