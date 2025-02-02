@@ -25,7 +25,7 @@ public class Exercise3 {
         int sumEven = list.stream()
                 .filter(e -> e % 2 != 0)
                 .reduce((a, e) -> a + e)
-                .get();
+                .orElse(0);
         System.out.println("The sum of even elements is: " + sumEven);
 
     }
