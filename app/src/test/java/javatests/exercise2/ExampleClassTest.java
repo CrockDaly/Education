@@ -1,4 +1,4 @@
-package java_tests.exercise2;
+package javatests.exercise2;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertThrows;

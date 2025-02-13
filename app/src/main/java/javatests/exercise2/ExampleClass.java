@@ -1,4 +1,4 @@
-package java_tests.exercise2;
+package javatests.exercise2;
 
 public class ExampleClass {
     public static int divide(int a, int b) {

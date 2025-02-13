@@ -1,4 +1,4 @@
-package java_tests.exercise4;
+package javatests.exercise4;
 
 
 import org.junit.jupiter.params.ParameterizedTest;
