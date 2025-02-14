@@ -1,0 +1,66 @@
+package threads.javamultithreading.exercise8;
+
+
+import java.util.concurrent.ConcurrentHashMap;
+
+//8. Write a Java program demonstrating how to access a map concurrently using the ConcurrentHashMap class.
+public class Exercise8 {
+    public static void main(String[] args) {
+        ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
+
+        Thread writerThread1 = new Thread(new Writer(map, "Thread-1", 1));
+        Thread writerThread2 = new Thread(new Writer(map, "Thread-2", 2));
+        writerThread1.start();
+        writerThread2.start();
+
+        Thread readerThread1 = new Thread(new Reader(map, "Thread-1"));
+        Thread readerThread2 = new Thread(new Reader(map, "Thread-2"));
+        readerThread1.start();
+        readerThread2.start();
+    }
+
+    static class Reader implements Runnable {
+        private ConcurrentHashMap<String, Integer> map;
+        private String threadName;
+
+        public Reader(ConcurrentHashMap<String, Integer> map, String threadName) {
+            this.map = map;
+            this.threadName = threadName;
+        }
+
+        public void run() {
+            for (int i = 0; i < 5; i++) {
+                Integer value = map.get(threadName);
+                System.out.println("Thread " + threadName + " read value " + value);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+        }
+    }
+
+    static class Writer implements Runnable {
+        private ConcurrentHashMap<String, Integer> map;
+        private String threadName;
+        private int value;
+
+        public Writer(ConcurrentHashMap<String, Integer> map, String threadName, int value) {
+            this.map = map;
+            this.threadName = threadName;
+            this.value = value;
+        }
+
+        public void run() {
+            for (int i = 0; i < 5; i++) {
+                map.put(threadName, value + i);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+        }
+    }
+}
