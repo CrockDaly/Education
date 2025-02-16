@@ -1,10 +1,14 @@
 package javatests.exercise2;
 
 public class ExampleClass {
-    public static int divide(int a, int b) {
+    public static double divide(int a, int b) {
         if(b == 0) {
             throw new IllegalArgumentException("Cannot divide by zero");
         }
-        return a / b;
+        return (double) a / b;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(divide(0, 1));
     }
 }
